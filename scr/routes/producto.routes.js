@@ -3,9 +3,9 @@ import { getProducto , createProducto , updateProducto , deleteProducto } from "
 
 const router = Router();
 
-router.get('/marca', getProducto);
-router.post('/marca', createProducto);
-router.put('/marca', updateProducto);
-router.delete('/marca', deleteProducto);
+router.get('/producto', getProducto);
+router.post('/producto', createProducto);
+router.put('/producto', updateProducto);
+router.delete('/producto', deleteProducto);
 
 export default router;
