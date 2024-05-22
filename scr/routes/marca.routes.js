@@ -8,5 +8,4 @@ router.post('/marca', createMarca);
 router.put('/marca', updateMarca);
 router.delete('/marca', deleteMarca);
 
-
 export default router;
