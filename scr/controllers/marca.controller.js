@@ -38,7 +38,8 @@ export const updateMarca = async (req, res) => {
 
 export const deleteMarca = async (req, res) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
+    console.log(id);
     const [result] = await pool.query("delete from marca where id = ?", [
       id,
     ]);

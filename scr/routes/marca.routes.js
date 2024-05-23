@@ -6,6 +6,6 @@ const router = Router();
 router.get('/marca', getMarca);
 router.post('/marca', createMarca);
 router.put('/marca', updateMarca);
-router.delete('/marca', deleteMarca);
+router.delete('/marca/:id', deleteMarca);
 
 export default router;

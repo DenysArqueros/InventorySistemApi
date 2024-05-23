@@ -43,7 +43,7 @@ export const updateProducto = async (req, res) => {
 
 export const deleteProducto = async (req, res) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const [result] = await pool.query("delete from producto where id = ?", [
       id,
     ]);

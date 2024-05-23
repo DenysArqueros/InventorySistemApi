@@ -38,7 +38,7 @@ export const updateUnidadMedida = async (req, res) => {
 
 export const deleteUnidadMedida = async (req, res) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
     const [result] = await pool.query("delete from unidadMedida where id = ?", [
       id,
     ]);
