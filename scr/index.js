@@ -2,6 +2,7 @@ import  express  from "express";
 import  cors from "cors"
 import  marcaRoutes from "./routes/marca.routes.js";
 import  unidadMedidaRoutes from "./routes/unidadMedida.routes.js";
+import  categoriaRoutes from "./routes/categoria.routes.js";
 import  productoRoutes from "./routes/producto.routes.js";
 
 const app = express();
@@ -10,7 +11,7 @@ app.use(cors())
 app.use(marcaRoutes);
 app.use(unidadMedidaRoutes);
 app.use(productoRoutes);
-
+app.use(categoriaRoutes);
 
 app.use((req,res)=>{
     res.status(404).json({
