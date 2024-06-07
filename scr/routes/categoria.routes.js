@@ -1,11 +1,13 @@
 import { Router } from "express";
-import { getCategoria , createCategoria , updateCategoria , deleteCategoria } from "../controllers/categoria.controller.js";
+
+import { verifyJwt } from "../middleware/webtoken.js";
+import { getCategoria, createCategoria, updateCategoria, deleteCategoria } from "../controllers/categoria.controller.js";
 
 const router = Router();
 
-router.get('/categoria', getCategoria);
-router.post('/categoria', createCategoria);
-router.put('/categoria', updateCategoria);
-router.delete('/categoria/:id', deleteCategoria);
+router.get('/categoria', verifyJwt, getCategoria);
+router.post('/categoria', verifyJwt, createCategoria);
+router.put('/categoria', verifyJwt, updateCategoria);
+router.delete('/categoria/:id', verifyJwt, deleteCategoria);
 
 export default router;

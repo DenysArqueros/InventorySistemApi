@@ -1,12 +1,13 @@
 import { Router } from "express";
+import { verifyJwt } from "../middleware/webtoken.js";
 import { getUnidadMedida, createUnidadMedida, updateUnidadMedida, deleteUnidadMedida } from "../controllers/unidadMedida.controller.js";
 
 const router = Router();
 
-router.get('/unidadMedida', getUnidadMedida);
-router.post('/unidadMedida', createUnidadMedida);
-router.put('/unidadMedida', updateUnidadMedida);
-router.delete('/unidadMedida/:id', deleteUnidadMedida);
+router.get('/unidadMedida', verifyJwt, getUnidadMedida);
+router.post('/unidadMedida', verifyJwt, createUnidadMedida);
+router.put('/unidadMedida', verifyJwt, updateUnidadMedida);
+router.delete('/unidadMedida/:id', verifyJwt, deleteUnidadMedida);
 
 
 export default router;
